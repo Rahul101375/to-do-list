@@ -1,0 +1,22 @@
+.todoform-button{
+    margin: 20px auto;
+}
+.todoform-button-item{
+    text-transform: none;
+    font-size: 20px;
+    color: blue; 
+}
+.todoform-button-item-1{
+    text-transform: none;
+    font-size: 20px;
+    margin: auto 15px;
+    color: blue; 
+}
+.todo-button{
+    display: flex;
+    justify-content: flex-start;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    /* border: 1px solid red; */
+}

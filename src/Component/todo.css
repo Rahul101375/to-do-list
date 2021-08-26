@@ -1,0 +1,5 @@
+.Completed{
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px auto;
+}

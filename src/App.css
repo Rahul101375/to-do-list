@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+
+.App{
+  background: linear-gradient(#3455eb,#3455eb);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.Appset{
+  margin: 50px auto !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.makeStyles-root-16{
+  background-color: none !important;
+}
+.MuiButton-contained{
+  box-shadow: none !important;
+  background-color: none !important;
+}
+.MuiInputBase-input{
+  width: 800px !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.MuiInput-underline:after{
+  border-bottom: none !important;
+}
+.MuiInput-underline:before{
+  border-bottom: none !important;
+}
+.makeStyles-root-3{
+  background-color: none !important;
+}
+@media screen and (max-width: 980px){
+  .MuiInputBase-input{
+    width: 620px !important;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 780px){
+  .MuiInputBase-input{
+    width: 400px !important;
   }
 }

@@ -1,0 +1,13 @@
+.Reset-button{
+    font-size: 20px;
+    font-weight: 500;
+    margin: auto 10px;
+}
+.MuiButton-contained{
+    background-color: #d0f5e8 !important;
+    border-radius: 25px !important;
+}
+.MuiButton-contained:hover{
+    background-color: none !important;
+    box-shadow: none !important;
+}
