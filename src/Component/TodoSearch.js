@@ -1,31 +1,38 @@
-import React, { useState } from 'react'
-import TodoForm from './TodoForm'
-import TodoList from './TodoList'
+// import React, { useEffect, useRef, useState } from 'react'
+// import TodoForm from './TodoForm'
+// import TodoList from './TodoList'
 
-const getLocalItem=()=>{
-    let list = localStorage.getItem('lists')
+// // const getLocalItem=()=>{
+// //     let list = localStorage.getItem('lists')
 
-    if(list){
-        return JSON.parse(localStorage.getItem('lists'))
-    }
-    else return [];
-}
+// //     if(list){
+// //         return JSON.parse(localStorage.getItem('lists'))
+// //     }
+// //     else return [];
+// // }
 
-const SearchTodoList=(props)=>{
+// const SearchTodoList=(props)=>{
+    
+//     const inputEl=useRef("");
 
-      const [checks,setChecks]=useState(getLocalItem);
-       
-    return(
-        <>
-        <div>
-            {
-                checks.map((item,index)=>{
-                    <div key={index}>{item === props.name ? '':props.name}</div>
-                })
-            }
-        </div>
-        </>
-    )
-}
+//     const getSearchTerm=()=>{
+//         props.searchKeyword(inputEl.current.value)
+//     }
 
-export default SearchTodoList
+
+//     return(
+//         <>
+
+//         <div>
+//             <input
+//             ref={inputEl}
+//             type="text"
+//             value={props.term}
+//             onChange={getSearchTerm}
+//             />
+//         </div>
+//         </>
+//     )
+// }
+
+// export default SearchTodoList

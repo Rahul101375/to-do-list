@@ -8,7 +8,7 @@ import AddIcon from '@material-ui/icons/Add';
 import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import './todoform.css'
-import SearchTodoList from "./TodoSearch";
+// import SearchTodoList from "./TodoSearch";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -54,6 +54,7 @@ function TodoForm(props) {
     const clickTest=(e)=>{
         setTest(!test)
     }
+    
 
     return (
         <>
@@ -120,9 +121,6 @@ function TodoForm(props) {
                                                 </InputAdornment>
                                             ),
                                         }}
-                                    />
-                                    <SearchTodoList 
-                                     name={input}
                                     />
                                 </Paper>
                             </Typography>

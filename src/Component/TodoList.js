@@ -6,6 +6,7 @@ import Todo from './Todo';
 import Button from '@material-ui/core/Button';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import './todolist.css'
+// import SearchTodoList from './TodoSearch';
 
 const getLocalItem=()=>{
     let list = localStorage.getItem('lists')
@@ -21,16 +22,16 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.button,
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(1),
-    '& > *': {
-        // margin: theme.spacing(0.2),
-      },
   },
 }));
 
-function TodoList(){
+function TodoList(props){
     const classes=useStyles();
 
     const[todos,setTodos] = useState(getLocalItem);
+
+    // const[searchTerm,setSearchTerm] = useState('');
+    // const[searchResult,setSearchResult] = useState([]);
      
     const addTodo= (todo) =>{
         if(!todo.text || /^\s*$/.test(todo.text)){
@@ -42,6 +43,22 @@ function TodoList(){
         setTodos(newTodos);
 
     };
+
+    // const searchHandler=(searchTerm)=>{
+    //     setSearchTerm(searchTerm);
+    //     if(searchTerm !== ''){
+    //         const newSearch = todos.filter((nSearch)=>{
+    //             return Object.values(nSearch)
+    //                  .join(" ")
+    //                  .toLowerCase()
+    //                  .includes(searchTerm.toLowerCase());
+    //         });
+    //         setSearchResult(newSearch);
+    //     }
+    //     else{
+    //         setSearchResult(todos);
+    //     }
+    // };
 
     const updateTodo = (todoId,newValue) =>{
         if(!newValue.text || /^\s*$/.test(newValue.text)){
@@ -106,7 +123,11 @@ function TodoList(){
                 <TodoForm
                 onSubmit={addTodo}
                 />
-
+                 {/* <SearchTodoList 
+                 todos={searchTerm.length < 1 ? todos : searchResult }
+                 term={searchTerm}
+                 searchKeyword={searchHandler}
+                 /> */}
                 <Todo
                 todos={todos}
                 completeTodo={completeTodo}

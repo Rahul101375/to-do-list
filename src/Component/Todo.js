@@ -5,9 +5,20 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles,withStyles} from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
+import { green } from '@material-ui/core/colors';
 import './todo.css'
+
+const GreenRadio = withStyles({
+    root: {
+      color: green[400],
+      '&$checked': {
+        color: green[600],
+      },
+    },
+    checked: {},
+  })((props) => <Radio color="default" {...props} />);
 
 
 
@@ -34,8 +45,8 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
 
     const [dekha,setDisplay] = useState();
     const [store,setStore] = useState([]);
+
     
-    // const refInput=useRef(null);
     const [edit, setEdit] = useState({
         id: null,
         value: '',
@@ -49,6 +60,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
             value: ''
         });
     };
+    
 
     if (edit.id) {
         return <TodoForm edit={edit} onSubmit={submitUpdate} />
@@ -84,7 +96,6 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
                                         value={todo.text}
                                         onChange={handleRadio}
                                         name="radiovalues"
-                                        size="small"
                                     />
 
                                     </div>
@@ -103,7 +114,6 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
                                 </Grid>
                             </Grid>
                             <Grid item lg={1} md={1} xs={1}>
-                                {/* <div className='icons'> */}
                                 <div
                                     onClick={() => removeTodo(todo.id)}
                                     className="delete-icon"
@@ -134,9 +144,8 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
             <Paper className={classes.Paper}>
                  <Grid container spacing={0} alignItems="center" justifyContent="flex-start">
                      <Grid item  spacing={0}>
-                         <Radio
-                         checked="true"
-                         color="default"
+                         <GreenRadio
+                         checked="true" 
                          />
                      </Grid>
                      <Grid item >
