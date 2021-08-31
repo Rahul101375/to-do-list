@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react'
 import './todosearch.css'
 import SearchIcon from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close';
-import { Grid } from '@material-ui/core'
 import { Paper } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField';
 import { Typography } from '@material-ui/core';
@@ -65,8 +64,6 @@ function SearchTodoList() {
             <div className={classes.root}>
                 <Typography variant="h4" component="h2" align="left">
                     <Paper className={classes.paper}>
-                        <Grid container spacing={0}>
-                            <Grid item sm={12} lg={12} xl={12}>
                         <TextField
                             type="text"
                             autoComplete="off"
@@ -88,8 +85,6 @@ function SearchTodoList() {
                                 })}
                             </div>
                         )}
-                        </Grid>
-                    </Grid>
                     </Paper>
                 </Typography>
             </div>
