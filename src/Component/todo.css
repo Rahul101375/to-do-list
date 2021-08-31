@@ -3,3 +3,14 @@
     justify-content: flex-start;
     margin: 10px auto;
 }
+.todo-row-complete{
+    border: 1px solid red;
+}
+.todo-row{
+    display: block;
+    margin: 20px auto;
+    padding: auto;
+}
+.completed-item{
+    margin: 20px auto;
+}

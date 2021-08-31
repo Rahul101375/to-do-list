@@ -1,8 +1,9 @@
+
 .App{
   background: linear-gradient(#213fc7c2,#8c8d96);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: auto;
 }
 .Appset{
   margin: 50px auto !important;

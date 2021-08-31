@@ -8,7 +8,7 @@ import AddIcon from '@material-ui/icons/Add';
 import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import './todoform.css'
-// import SearchTodoList from "./TodoSearch";
+import SearchTodoList from "./TodoSearch";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -25,6 +25,14 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
+const getLocalItem=()=>{
+    let list=localStorage.getItem('lists');
+    if(list){
+        return JSON.parse(localStorage.getItem('lists'));
+    }
+    else 
+       return [];
+}
 
 function TodoForm(props) {
     const classes = useStyles;
@@ -32,6 +40,11 @@ function TodoForm(props) {
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
     const [test,setTest] = useState(false);
     const inputRef = useRef(null);
+    const [inputdata,setInputData] = useState('');
+
+    const handleSearch=(e)=>{
+        setInputData(e.target.value);
+    }
 
     useEffect(() => {
         inputRef.current.focus();
@@ -97,7 +110,7 @@ function TodoForm(props) {
                               </Paper>
                             </div>
 
-
+ 
                     </>
                 ) :
                     (
@@ -107,6 +120,7 @@ function TodoForm(props) {
                                 <Paper className={classes.paper}>
                                     <TextField
                                         type="text"
+                                        autoComplete="off"
                                         value={input}
                                         name="text"
                                         placeholder="Add a task"
@@ -125,13 +139,7 @@ function TodoForm(props) {
                                 </Paper>
                             </Typography>
 
-                            <div className={classes.root}>
-                                    
-                              <Paper className={classes.paper}>
-                              <div className="todoform-button">
-                                  
-                                <Grid container spacing={2} justifyContent="flex-start" alignItems="flex-start">
-                              <Grid item lg={12} md={12} xs={12}>
+                                  <SearchTodoList/>
                                  <Button
                                  type="submit"
                                  fullWidth="true"
@@ -139,16 +147,7 @@ function TodoForm(props) {
                                     value={test}
                                     onClick={clickTest}
                                   >
-                                    <div className="todoform-button-item">
-                                        submit
-                                        </div>
                                 </Button>
-                                
-                              </Grid>
-                              </Grid>
-                                </div>
-                              </Paper>
-                            </div>
                         </>
                     )
                 }
